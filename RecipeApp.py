@@ -8,15 +8,15 @@ def menu():
 # Add function for adding recipe in list
 def Add(recipe, id):
     name = input("Enter name of Recipe =")
-    if name == "":
+    if name.strip() == "":
         print("You must have to enter value for name!")
         return False
     Type = input("Enter Recipe Type =")
-    if Type == "":
+    if Type.strip() == "":
         print("You must have to enter value for type!")
         return False
     description = input("Enter description =")
-    if description == "":
+    if description.strip() == "":
         print("You must have to enter value for description!")
         return False
 
@@ -90,15 +90,17 @@ while True:
 
         elif choice == 2:
             if len(recipe) > 0:
-                uid = int(input("Enter id =>"))
+                uid = int(input("Enter id for update =>"))
                 Update(recipe, uid)
             else:
                 print("Recipe Book is empty!")
 
         elif choice == 3:
             if len(recipe) > 0:
-                uid = int(input("Enter id =>"))
-                Delete(recipe, uid)
+                uid = int(input("Enter id for delete=>"))
+                if input("Are you sure ?(y/n)").upper()=="Y":
+                    Delete(recipe, uid)
+                
             else:
                 print("Recipe Book is empty!")
 
