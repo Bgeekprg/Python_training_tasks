@@ -8,9 +8,9 @@ while True:
         
     if user_input == '1':
         dice_roll = roll_dice()
-        print(f"The dice rolled: {dice_roll}")
+        print(f"The dice rolled: {dice_roll}\n")
     elif user_input == '0':
         print("Exiting the dice roll program.")
         break
     else:
-        print("Invalid input. Please press 1 to roll the dice or 0 to exit.")
+        print("Invalid input. Please press 1 to roll the dice or 0 to exit.\n")
