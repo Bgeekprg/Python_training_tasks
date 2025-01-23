@@ -26,10 +26,17 @@ print("----------BMI Calculator----------")
 name = input("Enter Name =")
 try:
     weight = float(input("Enter ur Weight(Kg) ="))
+    if weight<=0:
+        raise Exception("Weight can not be zero or minus")
     height = float(input("Enter your Height(meter) ="))
+    if height<=0:
+        raise Exception("Height can not be zero or minus")
 
     print("-----------------------------------------")
     print(f"{name} your BMI is = {calculateBMI(weight,height)}")
-except:
+except ValueError:
     print("Please enter only Decimal values !")
+except Exception as e:
+    print(e)
+
 
