@@ -10,6 +10,7 @@
 def calculateBMI(weight,height):
     bmi = weight/height**2
 
+    #checks and return the BMI category as per result
     if bmi < 18.5:
         return f" {round(bmi,2)}(Underweight)"
     elif bmi >=18.5 and bmi<25:
@@ -21,7 +22,7 @@ def calculateBMI(weight,height):
 
 
 print("----------BMI Calculator----------")
-
+#get the input of name,weight and height
 name = input("Enter Name =")
 try:
     weight = float(input("Enter ur Weight(Kg) ="))
