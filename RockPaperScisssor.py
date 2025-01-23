@@ -17,7 +17,7 @@ class RockPaperScissor:
                 raise Exception
             self.computerAction=random.randint(1,3)
         except:
-            print("You entered Invalid choice !")
+            print("You entered Invalid choice !") 
             exit(0)
     
     def result(self):
@@ -36,8 +36,13 @@ class RockPaperScissor:
         else:
             return "you win !"
 
-    
+    def play_again(self):
+        play_again_choice = input("\nDo you want to play again? (y/n): ").upper()
+        if play_again_choice != 'Y':
+            exit(0)
 
 game=RockPaperScissor()
-game.start()
-print(game.result())
+while True:
+    game.start()
+    print(game.result())
+    game.play_again()
