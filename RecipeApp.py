@@ -1,5 +1,5 @@
 def menu():
-    print("1: Add Recipe")
+    print("\n1: Add Recipe")
     print("2: Update Recipe")
     print("3: Delete Recipe")
     print("4: View Recipes")
@@ -35,22 +35,17 @@ def Update(recipe, uid):
 
     if indx is not None:
         name = input("Enter name of Recipe =")
-        if name == "":
-            print("You must have to enter value for name!")
-            return
+        if name.strip() != "":
+             recipe[indx]["Name"] = name
+        
         Type = input("Enter Recipe Type =")
-        if Type == "":
-            print("You must have to enter value for type!")
-            return
-        description = input("Enter description =")
-        if description == "":
-            print("You must have to enter value for description!")
-            return
+        if Type.strip() != "":
+            recipe[indx]["Type"] = Type
 
-        # Update the recipe details
-        recipe[indx]["Name"] = name
-        recipe[indx]["Type"] = Type
-        recipe[indx]["Description"] = description
+        description = input("Enter description =")
+        if description.strip() != "":
+            recipe[indx]["Description"] = description
+        
         print("Recipe is Updated!")
     else:
         print("Recipe not found with the given id!")
@@ -111,11 +106,10 @@ while True:
             exit(0)
 
         else:
-            print("Enter a valid choice!")
+            print("Enter a valid choice!\n")
 
-        input("Please press Enter to continue\n")
+        
 
     except ValueError:
-        print("Please enter an integer value for choice")
-        input("Please press Enter to continue\n")
+        print("Please enter an integer value for choice\n")
         continue
