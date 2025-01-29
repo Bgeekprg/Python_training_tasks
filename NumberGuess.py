@@ -40,8 +40,14 @@ while chances < max_chances:
     
     try:
         guessed_number = int(input(f"Guess a number between {game.low} and {game.high}: "))
+        if guessed_number>game.high or guessed_number<game.low:
+            raise Exception()
+            
     except ValueError:
         print("Please enter a valid number!")
+        continue
+    except:
+        print("Please enter value in between given range!\n")
         continue
 
     # Check if the guessed number is correct
